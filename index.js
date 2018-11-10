@@ -22,6 +22,7 @@ app.get('/webhook', function(req, res) {
   }  
 });
 app.post('/webhook', function (req, res) {
+	console.log(req);
 	var data = req.body;
 	if(data.object === 'page'){
 	data.entry.forEach(function(entry){
