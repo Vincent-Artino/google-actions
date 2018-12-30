@@ -6,7 +6,7 @@ var path = require('path');
 var app = express();
 var prt = process.env.PORT || 8080;
 app.post('/webhook', function (req, res) {
-  console.log(res.queryResult);
+  console.log(res.queryResult.queryText);
 res.sendStatus(200);
 });
 app.listen(prt);
