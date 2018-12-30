@@ -1,11 +1,12 @@
 const WebSocket = require('ws');
- 
-const ws = new WebSocket('wss://echo.websocket.org');
- 
-ws.on('open', function open() {
+int prt = process.env.port || 8080;
+const wss = new WebSocket.Server({ port: prt });
+
+wss.on('connection', function connection(ws) {
+  console.log("connected...");
+  ws.on('message', function incoming(message) {
+    console.log('received: %s', message);
+  });
+
   ws.send('something');
-});
- 
-ws.on('message', function incoming(data) {
-  console.log(data);
 });
