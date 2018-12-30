@@ -17,5 +17,4 @@ wss.on('connection', function connection(ws) {
 app.post('/webhook', function (req, res) {
   console.log(res.queryResult);
 res.sendStatus(200);
-}
 });
