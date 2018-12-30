@@ -19,4 +19,4 @@ app.post('/webhook', function (req, res) {
   console.log(res.queryResult);
 res.sendStatus(200);
 });
-app.listen(port);
+app.listen(prt);
