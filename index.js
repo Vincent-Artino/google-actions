@@ -29,7 +29,7 @@ app.get('/', function (req, res) {
 });
 // handle post requests
 app.post('/webhook', function (req, res) {
-  console.log(req.body.result);
+  console.log(req.body);
 res.sendStatus(200);
 });
 // lister to port 
