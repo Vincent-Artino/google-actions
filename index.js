@@ -16,7 +16,7 @@ wss.on('connection', function connection(ws) {
   ws.send('something');
 });
 app.post('/webhook', function (req, res) {
-  console.log(req.queryResult.queryText);
+  console.log(req);
 res.sendStatus(200);
 });
 server.listen(process.env.PORT || 8080, () => {
