@@ -5,10 +5,6 @@ http = require('http');
 request = require('request');
 var path = require('path');
 var app = express();
-var bodyParser = require('body-parser')
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
 const server = http.createServer(app);
 // create websocket server and listen
 const wss = new WebSocket.Server({ server });
