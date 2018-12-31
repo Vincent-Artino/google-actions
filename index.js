@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
 });
 // handle post requests
 app.post('/webhook', function (req, res) {
-  console.log(req);
+  console.log(req.body.result);
 res.sendStatus(200);
 });
 // lister to port 
