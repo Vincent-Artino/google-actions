@@ -1,5 +1,6 @@
 const WebSocket = require('ws');
 express = require('express');
+var bodyParser = require('body-parser')
 https = require('https');
 http = require('http');
 request = require('request');
