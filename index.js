@@ -1,11 +1,11 @@
 const WebSocket = require('ws');
 express = require('express');
-https = require('https');
+http = require('http');
 request = require('request');
 var path = require('path');
 var app = express();
-var prt = process.env.PORT || 8080;
-onst wss = new WebSocket.Server({ port: 8080 });
+const server = http.createServer(app);
+const wss = new WebSocket.Server({ server });
 
 wss.on('connection', function connection(ws) {
   console.log("connected...");
@@ -16,6 +16,9 @@ wss.on('connection', function connection(ws) {
   ws.send('something');
 });
 app.post('/webhook', function (req, res) {
-  console.log(res.queryResult.queryText);
+  console.log(req.queryResult.queryText);
 res.sendStatus(200);
+});
+server.listen(process.env.PORT || 8080, () => {
+    console.log(`Server started on port ${server.address().port} :)`);
 });
