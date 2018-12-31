@@ -5,8 +5,17 @@ request = require('request');
 var path = require('path');
 var app = express();
 var prt = process.env.PORT || 8080;
+onst wss = new WebSocket.Server({ port: 8080 });
+
+wss.on('connection', function connection(ws) {
+  console.log("connected...");
+  ws.on('message', function incoming(message) {
+    console.log('received: %s', message);
+  });
+
+  ws.send('something');
+});
 app.post('/webhook', function (req, res) {
   console.log(res.queryResult.queryText);
 res.sendStatus(200);
 });
-app.listen(prt);
