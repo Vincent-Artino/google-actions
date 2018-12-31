@@ -12,7 +12,7 @@ const server = http.createServer(app);
 // create websocket server and listen
 const wss = new WebSocket.Server({ server });
 // on connection events
-wss.on('connection', function connection(ws) {
+/*wss.on('connection', function connection(ws) {
   console.log("connected...");
 // handle message events  
   ws.on('message', function incoming(message) {
@@ -21,6 +21,7 @@ wss.on('connection', function connection(ws) {
 //handle response
   ws.send('something');
 });
+*/
 // create a home page for the website
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname+'/views/index.html'));
